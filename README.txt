@@ -1,4 +1,4 @@
-ML Take-home
+ML platform
 
 This package assumes Anaconda for python 3.6 is installed and the bash shell is
 installed
