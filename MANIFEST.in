@@ -1,0 +1,5 @@
+recursive-include mlplatform/templates *
+recursive-include mlplatform/static *
+recursive-include mlplatform/datasets *
+recursive-include mlplatform/word_vectors *
+README.txt

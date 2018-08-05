@@ -1,0 +1,12 @@
+name: mlplatform
+channels:
+- conda-forge
+dependencies:
+- pandas
+- scipy
+- matplotlib
+- pip:
+  - flask
+  - tensorflow
+  - numpy>=1.14
+  - sklearn

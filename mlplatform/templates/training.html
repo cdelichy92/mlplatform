@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Training model</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <style>
+          .container {
+            max-width: 1000px;
+          }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="cover-container">
+                <nav id="main">
+                    <a href="http://localhost:5000/predict" >Prediction</a>
+                </nav>
+            <div class="inner cover">
+            <div class="row">
+                <h2>Text Classification</h2>
+                <br>
+                <form role="form" method="POST" enctype=multipart/form-data>
+                  <div class="form-group">
+                    <!--<input type="textarea" name="user_text"
+                        class="form-control">-->
+                     <input type=file name=file>
+                  </div>
+                  <button type="submit" class="btn btn-default">Train</button>
+                </form>
+                <br>
+            </div>
+            <div class="row">
+              {% if success %}
+                <h2>Success!</h2>
+                <br>
+              {% endif %}
+            </div>
+            <div class="row">
+              {% if loss_img %}
+              <img src="{{ loss_img }}" alt="Training Loss">
+              {% endif %}
+            </div>
+            <div class="row">
+              {% if metrics %}
+                <h2>Validation metrics</h2>
+                <br>
+              <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th> Metric </th>
+                      <th> Value </th>
+                    </tr>
+                  </thead>
+                  {% for key, value in metrics.items() %}
+                    <tr>
+                      <td> {{ key }} </td>
+                      <td> {{ value }} </td>
+                    </tr>
+                  {% endfor %}
+              </table>
+              {% endif %}
+            </div>
+        </div>
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    </body>
+</html>
